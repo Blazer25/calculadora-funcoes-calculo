@@ -1,3 +1,5 @@
+//Função constante
+
 #include <stdio.h>
 #include <stdlib.h>
 
