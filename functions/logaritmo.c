@@ -14,8 +14,7 @@ int main() {
   do {
     printf("Informe o valor de K (Base): \n");
     scanf("%f", &k);
-    if (k == 1 || k <= 0)
-      printf("O valor de K não pode ser: %f\n", k);
+    if (k == 1 || k <= 0) printf("O valor de K não pode ser: %f\n", k);
   } while (k == 1 || k <= 0);
 
   do {
