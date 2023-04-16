@@ -37,6 +37,10 @@ int main() {
   }
   printf("O valor de cos(%.4f radianos) eh %.4f\n", valorX, cosRadianos(valorX));
   break;
+
+  default:
+  printf("Digite um número entre 1 e 2!!!");
+  return 1;
   }
   
   return 0;
