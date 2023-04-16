@@ -9,11 +9,11 @@ float logvKX(float base, float logaritmando) {
 };
 
 int main() {
-  
+
   float valorK, valorX;
 
   do {
-    printf("Informe o valor de valorK (Base): \n");
+    printf("Informe o valor de K (Base): \n");
     scanf("%f", &valorK);
     if (valorK == 1 || valorK <= 0)
       printf("O valor de K não pode ser: %f\n", valorK);
