@@ -31,7 +31,7 @@ int main() {
     printf("\nA curva eh: Decrescente");
   }
 
-  printf("\nf(vX): %.4f", logvKX(valorK, valorX));
+  printf("\nf(X): %.4f", logKX(valorK, valorX));
 
   return 0;
 }
