@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 /*Função coseno graus*/
-float cosGraus(float x) { return cos(x * M_PI / 180); }
+float cosGraus(float valorX) { return cos(valorX * M_PI / 180); }
 /*Função conseno radianos*/
-float cosRadianos(float x) { return cos(x * M_PI); }
+float cosRadianos(float valorX) { return cos(valorX * M_PI); }
 
 int main() {
-  float k, x;
+  float valorX;
   int escolha;
  
 /*Menu inicial*/
@@ -22,20 +22,20 @@ int main() {
     case 1:
       do {
         printf("Digite o valor de x para calcular:\n");
-        scanf("%f", &x);
-        if (x < 0) printf("Dígito inválido, tente novamente\n");
-      } while (x < 0);
-      printf("O valor de cos(%.4f graus) eh %.4f\n", x, cosGraus(x));
+        scanf("%f", &valorX);
+        if (valorX < 0) printf("Dígito inválido, tente novamente\n");
+      } while (valorX < 0);
+      printf("O valor de cos(%.4f graus) eh %.4f\n", valorX, cosGraus(valorX));
       break;
 
     /*Radianos*/
     case 2:
       do {
         printf("Digite o valor de x para calcular:\n");
-        scanf("%f", &x);
-        if (x < 0) printf("Dígito inválido, tente novamente\n");
-      } while (x < 0);
-      printf("O valor de cos(%.4f radianos) eh %.4f\n", x, cosRadianos(x));
+        scanf("%f", &valorX);
+        if (valorX < 0) printf("Dígito inválido, tente novamente\n");
+      } while (valorX < 0);
+      printf("O valor de cos(%.4f radianos) eh %.4f\n", valorX, cosRadianos(valorX));
       break;
     }
     
