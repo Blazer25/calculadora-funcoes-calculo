@@ -11,11 +11,13 @@ int main() {
     do {
       printf("Digite o valor de k:\n");
       scanf("%f", &k);
+      if (k <= 0 || k == 1) printf("Dígito inválido, tente novamente\n");
     } while (k <= 0 || k == 1);
     do {
       printf("Digite o valor de x:\n");
       scanf("%f", &x);
-    } while (k == 1);
+      if (x == 1 || x == 0) printf("Dígito inválido, tente novamente\n");
+    } while (x == 1 || x==0);
 
     /*Saidas*/
     if (k > 1) {
@@ -24,7 +26,6 @@ int main() {
       printf("A curva é decrescente.\n");
     }
     printf("f(x) eh: %.4f\n", exponencial(k, x));
-
 
   return 0;
 }
