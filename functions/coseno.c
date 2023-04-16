@@ -20,32 +20,23 @@ int main() {
   switch (escolha) {
   /*Graus*/
   case 1:
-    do {
-      printf("Digite o valor de x para calcular:\n");
-      while (scanf("%f", &valorX) != 1) {
-        printf("Entrada inválida, digite um número real\n");
-        while (getchar() != '\n');
-      }
-      if (valorX < 0)
-        printf("Entrada inválida, digite um número real\n");
-    } while (valorX < 0);
-    printf("O valor de cos(%.4f graus) eh %.4f\n", valorX, cosGraus(valorX));
-    break;
+  printf("Digite o valor de x para calcular:\n");
+  while (scanf("%f", &valorX) != 1) {
+  printf("Entrada inválida, digite um número real\n");
+  while (getchar() != '\n');
+  }
+  printf("O valor de cos(%.4f graus) eh %.4f\n", valorX, cosGraus(valorX));
+  break;
 
   /*Radianos*/
   case 2:
-    do {
-      printf("Digite o valor de x para calcular:\n");
-      while (scanf("%f", &valorX) != 1) {
-        printf("Entrada inválida, digite um número real\n");
-        while (getchar() != '\n');
-      }
-      if (valorX < 0)
-        printf("Entrada inválida, digite um número real\n");
-    } while (valorX < 0);
-    printf("O valor de cos(%.4f radianos) eh %.4f\n", valorX,
-           cosRadianos(valorX));
-    break;
+  printf("Digite o valor de x para calcular:\n");
+  while (scanf("%f", &valorX) != 1) {
+  printf("Entrada inválida, digite um número real\n");
+  while (getchar() != '\n');
+  }
+  printf("O valor de cos(%.4f radianos) eh %.4f\n", valorX, cosRadianos(valorX));
+  break;
   }
   
   return 0;
