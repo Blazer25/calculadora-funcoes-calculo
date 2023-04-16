@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float logvKX(float base, float logaritmando) {
+float logKX(float base, float logaritmando) {
   return log(logaritmando) / log(base);
 };
 
