@@ -129,7 +129,6 @@ int funcaoLinear()
 
     while (scanf("%f", &valorA) != 1)
     {
-        printf("Caiu dentro do while");
         printf("Entrada inválida, digite um número real e que seja diferente de zero\n");
         while (getchar() != '\n')
             ;
