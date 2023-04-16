@@ -12,18 +12,19 @@ int main() {
 
   float valorK, valorX;
 
-  do {
-    printf("Informe o valor de K (Base): \n");
-    scanf("%f", &valorK);
-    if (valorK == 1 || valorK <= 0)
-      printf("O valor de K não pode ser: %f\n", valorK);
-  } while (valorK == 1 || valorK <= 0);
+  printf("Digite o valor de K (Base): \n");
+  while (scanf("%f", &valorK) != 1 || valorK == 1 || valorK <= 0) {
+    printf("Entrada inválida, digite um número real maior que zero e diferente de 1: \n");
+    while (getchar() != '\n')
+      ;
+  }
 
-  do {
-    printf("Informe o valor de X (Logaritmando): \n");
-    scanf("%f", &valorX);
-    if (valorX <= 0) printf ("O valor de X não pode ser: %f\n", valorX);
-  } while (valorX <= 0);
+  printf("Digite o valor de X (Logaritmando): \n");
+  while (scanf("%f", &valorX) != 1 || valorX == 1 || valorX <= 0) {
+    printf("Entrada inválida, digite um número real maior que zero e diferente de 1: \n");
+    while (getchar() != '\n')
+      ;
+  }
 
   if (valorK > 1) {
     printf("\nA curva eh: Crescente");
