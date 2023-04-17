@@ -14,34 +14,24 @@ int main()
 {
     printf("Digite o valor de A: \n");
 
-    while (scanf("%f", &valorA) != 1)
+    while (scanf("%f", &valorA) != 1 || valorA == 0)
     {
-        printf("Caiu dentro do while");
-        printf("Entrada inválida, digite um número real e que seja diferente de zero\n");
+        printf("Entrada inválida, digite um número real e que seja diferente de zero:\n");
         while (getchar() != '\n')
             ;
     }
 
-    if (!valorA || valorA == 0)
-    {
-        printf("Não é possível digitar o valor zero para o termo A, pois assim, a função se tornará uma função Constante.");
-        return;
-    }
-
     // Checando o sentindo da reta da função
     if (valorA < 0)
-    {
         strcpy(sentidoReta, "Decrescente");
-    }
+
     else if (valorA > 0)
-    {
         strcpy(sentidoReta, "Crescente");
-    }
 
     printf("Digite o valor de B: \n");
     while (scanf("%f", &valorB) != 1)
     {
-        printf("Entrada inválida, digite um número real\n");
+        printf("Entrada inválida, digite um número real:\n");
         while (getchar() != '\n')
             ;
     }
@@ -49,7 +39,7 @@ int main()
     printf("Digite o valor de X: \n");
     while (scanf("%f", &valorX) != 1)
     {
-        printf("Entrada inválida, digite um número real\n");
+        printf("Entrada inválida, digite um número real:\n");
         while (getchar() != '\n')
             ;
     }

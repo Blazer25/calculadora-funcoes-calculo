@@ -10,7 +10,7 @@ int main()
     printf("Digite o valor de X: \n");
     while (scanf("%f", &valorX) != 1)
     {
-        printf("Entrada inválida, digite um número real\n");
+        printf("Entrada inválida, digite um número real:\n");
         while (getchar() != '\n')
             ;
     }
@@ -18,7 +18,7 @@ int main()
     printf("Digite o valor de K: \n");
     while (scanf("%f", &valorK) != 1)
     {
-        printf("Entrada inválida, digite um número real\n");
+        printf("Entrada inválida, digite um número real:\n");
         while (getchar() != '\n')
             ;
     }
