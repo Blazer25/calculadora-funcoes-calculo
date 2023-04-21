@@ -20,7 +20,7 @@ int main() {
   }
 
   printf("Digite o valor de X (Logaritmando): \n");
-  while (scanf("%f", &valorX) != 1 || valorX == 1 || valorX <= 0) {
+  while (scanf("%f", &valorX) != 1 || valorX <= 0) {
     printf("Entrada inválida, digite um número real maior que zero e diferente de 1: \n");
     while (getchar() != '\n')
       ;

@@ -5,7 +5,7 @@
 /*Função seno graus*/
 float sinGraus(float valorX) { return sin(valorX * M_PI / 180); }
 /*Função seno radianos*/
-float sinRadianos(float valorX) { return sin(valorX * M_PI); }
+float sinRadianos(float valorX) { return sin(valorX); }
 
 int main() {
   float valorX;
