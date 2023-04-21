@@ -25,8 +25,9 @@ int main() {
     while (getchar() != '\n')
       ;
   }
-
-  if (valorK > 1) {
+  if (valorX == 1) {
+    printf("\nA função é constante");
+  }else if (valorK > 1) {
     printf("\nA curva eh: Crescente");
   } else {
     printf("\nA curva eh: Decrescente");
