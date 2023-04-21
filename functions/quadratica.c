@@ -1,4 +1,4 @@
-//Função Linear
+//Função Quadratica
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,7 +11,8 @@ float resultadoFuncao = 0;
 float zero1 = 0, zero2 = 0;
 float delta = 0;
 float verticeX = 0, verticeY = 0;
-char sentidoParabola[30];
+char sentidoParabola[18];
+char resultVertice[50];
 int qtdZeros = 0;
 
 int main()
@@ -20,7 +21,7 @@ int main()
 
     while (scanf("%f", &valorA) != 1 || valorA == 0)
     {
-        printf("Entrada inválida, digite um número real e que seja diferente de zero:\n");
+        printf("Entrada invalida, digite um numero real e que seja diferente de zero:\n");
         while (getchar() != '\n')
             ;
     }
@@ -28,15 +29,15 @@ int main()
     // Checando o sentindo da parabola
 
     if (valorA < 0)
-        strcpy(sentidoParabola, "Voltado para cima");
+        strcpy(sentidoParabola, "Voltado para baixo");
 
     else if (valorA > 0)
-        strcpy(sentidoParabola, "Voltado para baixo");
+        strcpy(sentidoParabola, "Voltado para cima");
 
     printf("Digite o valor de B: \n");
     while (scanf("%f", &valorB) != 1)
     {
-        printf("Entrada inválida, digite um número real:\n");
+        printf("Entrada invalida, digite um numero real:\n");
         while (getchar() != '\n')
             ;
     }
@@ -44,7 +45,7 @@ int main()
     printf("Digite o valor de C: \n");
     while (scanf("%f", &valorC) != 1)
     {
-        printf("Entrada inválida, digite um número real:\n");
+        printf("Entrada invalida, digite um numero real:\n");
         while (getchar() != '\n')
             ;
     }
@@ -52,12 +53,12 @@ int main()
     printf("Digite o valor de X: \n");
     while (scanf("%f", &valorX) != 1)
     {
-        printf("Entrada inválida, digite um número real:\n");
+        printf("Entrada invalida, digite um numero real:\n");
         while (getchar() != '\n')
             ;
     }
 
-    // Determinando os zeros da função
+    // Determinando os zeros da funcao
 
      delta = valorB * valorB - 4 * valorA * valorC;
 
@@ -75,29 +76,29 @@ int main()
     // Calculando o vertice da funcao
 
     if (delta < 0) {
-        printf("A equação não possui vértice real.\n");
+        strcpy(resultVertice, "Não possui vertice real");
     } else {
-        xv = -b / (2 * a);
-        yv = -delta / (4 * a);
-        printf("O vértice da parábola é: (%.2f, %.2f)\n", xv, yv);
+        verticeX = (-(1)*valorB) / (2 * valorA);
+        verticeY = (-(1)*delta) / (4 * valorA);
+        sprintf(resultVertice, "Os vertices sao: (%.4f , %.4f)", verticeX,verticeY);
     }
 
-    // Determinando o resultado da função
+    // Determinando o resultado da funcao
     
     resultadoFuncao = (valorA * pow(valorX,2)) + (valorB * valorX) + valorC;
 
     // Printando as respostas desejadas
 
     printf("\n");
-    printf("O sentido da função é: %s \n", sentidoParabola);
+    printf("O sentido da funcao é: %s \n", sentidoParabola);
     printf("Ela intercepta o eixo Y no ponto: %.4f \n", valorC);
-    printf("A função possui %d raizes \n", qtdZeros);
-    printf("Os zeros de f(x): %.4f \n", valorZeroDaFuncao);
-    if (qtdZeros==0) printf("Os zeros de f(x): Não possui \n");
+    printf("A funcao possui %d raizes \n", qtdZeros);
+    if (qtdZeros==0) printf("Os zeros de f(x): Nao possui \n");
     if (qtdZeros==1) printf("Os zeros de f(x): Somente %.4f \n",zero1);
     if (qtdZeros==2) printf("Os zeros de f(x): %.4f e %.4f \n",zero1 ,zero2);
+    printf("%s \n",resultVertice);
     printf("\n");
-    printf("O resultado da função f(x) = %.4f*%.4f^2 + %.4f*%.4f + %.4f é: \n", valorA, valorX, valorB, valorX, valorC);
+    printf("O resultado da funcao f(x) = %.4f*%.4f^2 + %.4f*%.4f + %.4f é: \n", valorA, valorX, valorB, valorX, valorC);
     printf("f(%.4f) = %.4f \n", valorX, resultadoFuncao);
     return 0;
 }
