@@ -5,7 +5,7 @@
 /*Função coseno graus*/
 float cosGraus(float valorX) { return cos(valorX * M_PI / 180); }
 /*Função conseno radianos*/
-float cosRadianos(float valorX) { return cos(valorX * M_PI); }
+float cosRadianos(float valorX) { return cos(valorX); }
 
 int main() {
   float valorX;
