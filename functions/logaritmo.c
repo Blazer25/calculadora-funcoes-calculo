@@ -20,13 +20,14 @@ int main() {
   }
 
   printf("Digite o valor de X (Logaritmando): \n");
-  while (scanf("%f", &valorX) != 1 || valorX == 1 || valorX <= 0) {
-    printf("Entrada inválida, digite um número real maior que zero e diferente de 1: \n");
+  while (scanf("%f", &valorX) != 1 || valorX <= 0) {
+    printf("Entrada inválida, digite um número real maior que zero: \n");
     while (getchar() != '\n')
       ;
   }
-
-  if (valorK > 1) {
+  if (valorX == 1) {
+    printf("\nA função é constante");
+  }else if (valorK > 1) {
     printf("\nA curva eh: Crescente");
   } else {
     printf("\nA curva eh: Decrescente");
