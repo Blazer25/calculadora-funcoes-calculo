@@ -21,7 +21,7 @@ int main() {
   /*Graus*/
   case 1:
     printf("Digite o valor de x para calcular:\n");
-    while (scanf("%f", &valorX) != 1 || valorX == 90 || (int)valorX % 180 == 90) {
+    while (scanf("%f", &valorX) != 1 || valorX == 90 || (int)valorX % 180 == 90 || valorX == -90 || (int)valorX % 180 == -90 ) {
       printf("Entrada inválida, digite um número real e diferente de 90 e 270 (e seus multiplos)\n");
       while (getchar() != '\n');
     }
@@ -31,7 +31,7 @@ int main() {
   /*Radianos*/
   case 2:
     printf("Digite o valor de x para calcular:\n");
-    while (scanf("%f", &valorX) != 1 || valorX == (M_PI / 2) || valorX == (2 * M_PI / 3)) {
+    while (scanf("%f", &valorX) != 1 || valorX == (M_PI / 2) || valorX == (2 * M_PI / 3) || valorX == (-1)*(M_PI / 2) || valorX == (-1)*(2 * M_PI / 3)) {
       printf("Entrada inválida, digite um número real e diferente de pi/2 e 3pi/2\n");
       while (getchar() != '\n');
     }
