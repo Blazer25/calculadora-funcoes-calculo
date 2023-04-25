@@ -42,8 +42,8 @@ char resultadoVertice[50];
  * Log: Realiza o logaritmo entre uma base e um logaritmando
  * sinGraus: Transforma o valor de seno para graus
  * sinRadianos: Transforma o valor de seno para radianos
- * cosGraus: Transforma o valor de coseno para graus
- * cosRadianos: Transforma o valor de coseno para radianos
+ * cosGraus: Transforma o valor de cosseno para graus
+ * cosRadianos: Transforma o valor de cosseno para radianos
  * tanGraus: Transforma o valor de tangente para graus
  * tanRadianos: Transforma o valor de tangente para radianos
  *
@@ -159,7 +159,7 @@ int funcaoConstante()
     }
 
     printf("\n");
-    printf("O valor da função f(x) = %.4f é: \n", valorK);
+    printf("O valor da função f(x) = %.4f eh: \n", valorK);
     printf("f(%.4f) = %.4f", valorX, valorK);
 }
 
@@ -207,12 +207,12 @@ int funcaoLinear()
     resultadoFuncao = (valorA * valorX) + valorB;
 
     printf("\n");
-    printf("A reta da função é: %s \n", sentidoReta);
+    printf("A reta da função eh: %s \n", sentidoReta);
     printf("Ela intercepta o eixo Y no ponto: %.4f \n", valorB);
-    printf("O zero da função é: %.4f \n", valorZeroDaFuncao);
+    printf("O zero da função eh: %.4f \n", valorZeroDaFuncao);
 
     printf("\n");
-    printf("O resultado da função f(x) = %.4f*%.4f + %.4f é: \n", valorA, valorX, valorB);
+    printf("O resultado da função f(x) = %.4f*%.4f + %.4f eh: \n", valorA, valorX, valorB);
     printf("f(%.4f) = %.4f \n", valorX, resultadoFuncao);
 }
 
@@ -296,7 +296,7 @@ int funcaoQuadratica()
     resultadoFuncao = (valorA * pow(valorX, 2)) + (valorB * valorX) + valorC;
 
     printf("\n");
-    printf("O sentido da função é: %s \n", sentidoParabola);
+    printf("O sentido da função eh: %s \n", sentidoParabola);
     printf("Ela intercepta o eixo Y no ponto: %.4f \n", valorC);
     printf("A função possui %d raizes \n", quantidadeZeros);
 
@@ -309,12 +309,15 @@ int funcaoQuadratica()
 
     printf("%s \n", resultadoVertice);
     printf("\n");
-    printf("O resultado da função f(x) = %.4f*%.4f^2 + %.4f*%.4f + %.4f é: \n", valorA, valorX, valorB, valorX, valorC);
+    printf("O resultado da função f(x) = %.4f*%.4f^2 + %.4f*%.4f + %.4f eh: \n", valorA, valorX, valorB, valorX, valorC);
     printf("f(%.4f) = %.4f \n", valorX, resultadoFuncao);
 }
 
 int funcaoExponencial()
 {
+    printf("\n");
+    printf("Você escolheu a opção de Função Exponencial -> f(x) = k^x");
+    printf("\n");
     do
     {
         printf("Digite o valor de k:\n");
@@ -343,17 +346,21 @@ int funcaoExponencial()
     /*Saidas*/
     if (valorK > 1)
     {
-        printf("A curva é crescente.\n");
+        printf("A curva eh crescente.\n");
     }
     else
     {
-        printf("A curva é decrescente.\n");
+        printf("A curva eh decrescente.\n");
     }
-    printf("f(x) é: %.4f\n", exponencial(valorK, valorX));
+    printf("f(x) eh: %.4f\n", exponencial(valorK, valorX));
 }
 
 int funcaoLogaritmica()
 {
+    printf("\n");
+    printf("Você escolheu a opção de Função Logaritmica -> f(x) = log_k(x)");
+    printf("\n");
+
     printf("Digite o valor de K (Base): \n");
     while (scanf("%f", &valorK) != 1 || valorK == 1 || valorK <= 0)
     {
@@ -371,7 +378,7 @@ int funcaoLogaritmica()
     }
     if (valorX == 1)
     {
-        printf("\nA função é Constante");
+        printf("\nA função eh Constante");
     }
     else if (valorK > 1)
     {
@@ -387,6 +394,10 @@ int funcaoLogaritmica()
 
 int funcaoSeno()
 {
+    printf("\n");
+    printf("Você escolheu a opção de Função Seno -> f(x) = sin(x)");
+    printf("\n");
+
     printf("Escolha o tipo do valor para utilizar:\n");
     printf("1 Entrada em Graus\n");
     printf("2 Entrada em Radianos\n");
@@ -403,7 +414,7 @@ int funcaoSeno()
             while (getchar() != '\n')
                 ;
         }
-        printf("O valor de sin(%.4f graus) é %.4f\n", valorX, sinGraus(valorX));
+        printf("O valor de sin(%.4f graus) eh %.4f\n", valorX, sinGraus(valorX));
         break;
 
     /*Radianos*/
@@ -415,7 +426,7 @@ int funcaoSeno()
             while (getchar() != '\n')
                 ;
         }
-        printf("O valor de sin(%.4f radianos) é %.4f\n", valorX, sinRadianos(valorX));
+        printf("O valor de sin(%.4f radianos) eh %.4f\n", valorX, sinRadianos(valorX));
         break;
 
     default:
@@ -426,6 +437,11 @@ int funcaoSeno()
 
 int funcaoCosseno()
 {
+
+    printf("\n");
+    printf("Você escolheu a opção de Função Cosseno -> f(x) = cos(x)");
+    printf("\n");
+
     printf("Escolha o tipo do valor para utilizar:\n");
     printf("1 Entrada em Graus\n");
     printf("2 Entrada em Radianos\n");
@@ -442,7 +458,7 @@ int funcaoCosseno()
             while (getchar() != '\n')
                 ;
         }
-        printf("O valor de cos(%.4f graus) é %.4f\n", valorX, cosGraus(valorX));
+        printf("O valor de cos(%.4f graus) eh %.4f\n", valorX, cosGraus(valorX));
         break;
 
     /*Radianos*/
@@ -454,7 +470,7 @@ int funcaoCosseno()
             while (getchar() != '\n')
                 ;
         }
-        printf("O valor de cos(%.4f radianos) é %.4f\n", valorX, cosRadianos(valorX));
+        printf("O valor de cos(%.4f radianos) eh %.4f\n", valorX, cosRadianos(valorX));
         break;
 
     default:
@@ -465,6 +481,11 @@ int funcaoCosseno()
 
 int funcaoTangente()
 {
+
+    printf("\n");
+    printf("Você escolheu a opção de Função Tangente -> f(x) = tan(x)");
+    printf("\n");
+
     printf("Escolha o tipo do valor para utilizar:\n");
     printf("1 Entrada em Graus\n");
     printf("2 Entrada em Radianos\n");
@@ -481,7 +502,7 @@ int funcaoTangente()
             while (getchar() != '\n')
                 ;
         }
-        printf("O valor de tan(%.4f graus) é %.4f\n", valorX, tanGraus(valorX));
+        printf("O valor de tan(%.4f graus) eh: %.4f\n", valorX, tanGraus(valorX));
         break;
 
     /*Radianos*/
@@ -493,7 +514,7 @@ int funcaoTangente()
             while (getchar() != '\n')
                 ;
         }
-        printf("O valor de tan(%.4f radianos) é %.4f\n", valorX, tanRadianos(valorX));
+        printf("O valor de tan(%.4f radianos) eh: %.4f\n", valorX, tanRadianos(valorX));
         break;
 
     default:
