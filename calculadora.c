@@ -1,6 +1,11 @@
 // ATIVIDADE 2 - Cálculo - ADS - Noturno - 2o Período
 
 /*
+ * REPOSITÓRIO NO GITHUB:
+ * https://github.com/Blazer25/calculadora-funcoes-calculo
+ */
+
+/*
  * INTEGRANTES DO GRUPO:
  * CRYSTIAN EDUARDO FERRAZ SCHLEMPER
  * GIOVANI MURAKAMI LINO RODRIGUES
@@ -11,23 +16,52 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 int opcaoEscolha = 0;
+int escolhaSubMenu = 0;
+int quantidadeZeros = 0;
 
 float valorX = 0, valorK = 0;
 float valorA = 0, valorB = 0, valorC = 0;
-
 float retaCruzaEixoY = 0;
 float valorZeroDaFuncao = 0;
 float resultadoFuncao = 0;
-char sentidoReta[20];
-
 float zero1 = 0, zero2 = 0;
 float delta = 0;
 float verticeX = 0, verticeY = 0;
+
+char sentidoReta[20];
 char sentidoParabola[20];
 char resultadoVertice[50];
-int quantidadeZeros = 0;
+
+/*
+ * Funções de suporte: são responsáveis por auxiliar o funcionamento das funções dentro do main.
+ *
+ * Exponencial: Calcula o exponencial de determinado número
+ * Log: Realiza o logaritmo entre uma base e um logaritmando
+ * sinGraus: Transforma o valor de seno para graus
+ * sinRadianos: Transforma o valor de seno para radianos
+ * cosGraus: Transforma o valor de coseno para graus
+ * cosRadianos: Transforma o valor de coseno para radianos
+ * tanGraus: Transforma o valor de tangente para graus
+ * tanRadianos: Transforma o valor de tangente para radianos
+ *
+ */
+
+float exponencial(float valorK, float valorX) { return pow(valorK, valorX); }
+
+float logKX(float base, float logaritmando) { return log(logaritmando) / log(base); }
+
+float sinGraus(float valorX) { return sin(valorX * M_PI / 180); }
+float sinRadianos(float valorX) { return sin(valorX); }
+
+float cosGraus(float valorX) { return cos(valorX * M_PI / 180); }
+float cosRadianos(float valorX) { return cos(valorX); }
+
+float tanGraus(float valorX) { return tan(valorX * M_PI / 180); }
+float tanRadianos(float valorX) { return tan(valorX); }
+/* FIM DAS FUNÇÕES DE SUPORTE */
 
 int main()
 {
@@ -281,27 +315,191 @@ int funcaoQuadratica()
 
 int funcaoExponencial()
 {
-    printf("Teste - Exponencial\n");
+    do
+    {
+        printf("Digite o valor de k:\n");
+        while (scanf("%f", &valorK) != 1)
+        {
+            printf("Entrada inválida, digite um número real: \n");
+            while (getchar() != '\n')
+                ;
+        }
+        if (valorK <= 0 || valorK == 1)
+            printf("Dígito inválido, tente novamente: \n");
+    } while (valorK <= 0 || valorK == 1);
+    do
+    {
+        printf("Digite o valor de x: \n");
+        while (scanf("%f", &valorX) != 1)
+        {
+            printf("Entrada inválida, digite um número real: \n");
+            while (getchar() != '\n')
+                ;
+        }
+        if (valorX == 1 || valorX == 0)
+            printf("Dígito inválido, tente novamente: \n");
+    } while (valorX == 1 || valorX == 0);
+
+    /*Saidas*/
+    if (valorK > 1)
+    {
+        printf("A curva é crescente.\n");
+    }
+    else
+    {
+        printf("A curva é decrescente.\n");
+    }
+    printf("f(x) é: %.4f\n", exponencial(valorK, valorX));
 }
 
 int funcaoLogaritmica()
 {
-    printf("Teste - Logaritmica\n");
+    printf("Digite o valor de K (Base): \n");
+    while (scanf("%f", &valorK) != 1 || valorK == 1 || valorK <= 0)
+    {
+        printf("Entrada inválida, digite um número real maior que zero e diferente de 1: \n");
+        while (getchar() != '\n')
+            ;
+    }
+
+    printf("Digite o valor de X (Logaritmando): \n");
+    while (scanf("%f", &valorX) != 1 || valorX <= 0)
+    {
+        printf("Entrada inválida, digite um número real maior que zero: \n");
+        while (getchar() != '\n')
+            ;
+    }
+    if (valorX == 1)
+    {
+        printf("\nA função é Constante");
+    }
+    else if (valorK > 1)
+    {
+        printf("\nA curva eh: Crescente");
+    }
+    else
+    {
+        printf("\nA curva eh: Decrescente");
+    }
+
+    printf("\nf(X): %.4f", logKX(valorK, valorX));
 }
 
 int funcaoSeno()
 {
-    printf("Teste - Seno\n");
+    printf("Escolha o tipo do valor para utilizar:\n");
+    printf("1 Entrada em Graus\n");
+    printf("2 Entrada em Radianos\n");
+    scanf("%d", &escolhaSubMenu);
+
+    switch (escolhaSubMenu)
+    {
+    /*Graus*/
+    case 1:
+        printf("Digite o valor de x para calcular:\n");
+        while (scanf("%f", &valorX) != 1)
+        {
+            printf("Entrada inválida, digite um número real: \n");
+            while (getchar() != '\n')
+                ;
+        }
+        printf("O valor de sin(%.4f graus) é %.4f\n", valorX, sinGraus(valorX));
+        break;
+
+    /*Radianos*/
+    case 2:
+        printf("Digite o valor de x para calcular:\n");
+        while (scanf("%f", &valorX) != 1)
+        {
+            printf("Entrada inválida, digite um número real: \n");
+            while (getchar() != '\n')
+                ;
+        }
+        printf("O valor de sin(%.4f radianos) é %.4f\n", valorX, sinRadianos(valorX));
+        break;
+
+    default:
+        printf("Entrada inválida, digite 1 ou 2: ");
+        return 1;
+    }
 }
 
 int funcaoCosseno()
 {
-    printf("Teste - Cosseno\n");
+    printf("Escolha o tipo do valor para utilizar:\n");
+    printf("1 Entrada em Graus\n");
+    printf("2 Entrada em Radianos\n");
+    scanf("%d", &escolhaSubMenu);
+
+    switch (escolhaSubMenu)
+    {
+    /*Graus*/
+    case 1:
+        printf("Digite o valor de x para calcular:\n");
+        while (scanf("%f", &valorX) != 1)
+        {
+            printf("Entrada inválida, digite um número real: \n");
+            while (getchar() != '\n')
+                ;
+        }
+        printf("O valor de cos(%.4f graus) é %.4f\n", valorX, cosGraus(valorX));
+        break;
+
+    /*Radianos*/
+    case 2:
+        printf("Digite o valor de x para calcular:\n");
+        while (scanf("%f", &valorX) != 1)
+        {
+            printf("Entrada inválida, digite um número real: \n");
+            while (getchar() != '\n')
+                ;
+        }
+        printf("O valor de cos(%.4f radianos) é %.4f\n", valorX, cosRadianos(valorX));
+        break;
+
+    default:
+        printf("Entrada inválida, digite 1 ou 2: ");
+        return 1;
+    }
 }
 
 int funcaoTangente()
 {
-    printf("Teste - Tangente\n");
+    printf("Escolha o tipo do valor para utilizar:\n");
+    printf("1 Entrada em Graus\n");
+    printf("2 Entrada em Radianos\n");
+    scanf("%d", &escolhaSubMenu);
+
+    switch (escolhaSubMenu)
+    {
+    /*Graus*/
+    case 1:
+        printf("Digite o valor de x para calcular:\n");
+        while (scanf("%f", &valorX) != 1 || valorX == 90 || (int)valorX % 180 == 90 || valorX == -90 || (int)valorX % 180 == -90)
+        {
+            printf("Entrada inválida, digite um número real e diferente de 90 e 270 (e seus multiplos): \n");
+            while (getchar() != '\n')
+                ;
+        }
+        printf("O valor de tan(%.4f graus) é %.4f\n", valorX, tanGraus(valorX));
+        break;
+
+    /*Radianos*/
+    case 2:
+        printf("Digite o valor de x para calcular:\n");
+        while (scanf("%f", &valorX) != 1 || valorX == (M_PI / 2) || valorX == (2 * M_PI / 3) || valorX == (-1) * (M_PI / 2) || valorX == (-1) * (2 * M_PI / 3))
+        {
+            printf("Entrada inválida, digite um número real e diferente de pi/2 e 3pi/2: \n");
+            while (getchar() != '\n')
+                ;
+        }
+        printf("O valor de tan(%.4f radianos) é %.4f\n", valorX, tanRadianos(valorX));
+        break;
+
+    default:
+        printf("Entrada inválida, digite 1 ou 2: ");
+        return 1;
+    }
 }
 
 int sair()
