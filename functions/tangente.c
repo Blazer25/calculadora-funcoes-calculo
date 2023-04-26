@@ -31,8 +31,8 @@ int main() {
   /*Radianos*/
   case 2:
     printf("Digite o valor de x para calcular:\n");
-    while (scanf("%f", &valorX) != 1 || valorX == (M_PI / 2) || valorX == (2 * M_PI / 3) || valorX == (-1)*(M_PI / 2) || valorX == (-1)*(2 * M_PI / 3)) {
-      printf("Entrada inválida, digite um número real e diferente de pi/2 e 3pi/2\n");
+    while (scanf("%f", &valorX) != 1 ) {
+      printf("Entrada inválida, digite um número real\n");
       while (getchar() != '\n');
     }
     printf("O valor de tan(%.4f radianos) eh %.4f\n", valorX, tanRadianos(valorX));
