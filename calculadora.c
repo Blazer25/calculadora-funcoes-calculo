@@ -339,9 +339,9 @@ int funcaoExponencial()
             while (getchar() != '\n')
                 ;
         }
-        if (valorX == 1 || valorX == 0)
+        if (valorX < 0)
             printf("Dígito inválido, tente novamente: \n");
-    } while (valorX == 1 || valorX == 0);
+    } while (valorX < 0);
 
     /*Saidas*/
     if (valorK > 1)
