@@ -75,13 +75,9 @@ int main()
 
     // Calculando o vertice da funcao
 
-    if (delta < 0) {
-        strcpy(resultVertice, "Não possui vertice real");
-    } else {
-        verticeX = (-(1)*valorB) / (2 * valorA);
-        verticeY = (-(1)*delta) / (4 * valorA);
-        sprintf(resultVertice, "Os vertices sao: (%.4f , %.4f)", verticeX,verticeY);
-    }
+    verticeX = (-(1)*valorB) / (2 * valorA);
+    verticeY = (-(1)*delta) / (4 * valorA);
+    sprintf(resultVertice, "Os vertices sao: (%.4f , %.4f)", verticeX,verticeY);
 
     // Determinando o resultado da funcao
     
