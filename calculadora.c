@@ -372,7 +372,7 @@ int funcaoLogaritmica()
     }
     if (valorK == 1)
     {
-        printf("\nA função eh Constante");
+        printf("\nA função eh Constante em y");
     }
     else if (valorK > 1)
     {

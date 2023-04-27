@@ -26,7 +26,7 @@ int main() {
       ;
   }
   if (valorK == 1) {
-    printf("\nA função é constante");
+    printf("\nA função é constante em y");
   }else if (valorK > 1) {
     printf("\nA curva eh: Crescente");
   } else {
