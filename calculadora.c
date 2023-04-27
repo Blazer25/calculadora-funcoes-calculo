@@ -376,7 +376,7 @@ int funcaoLogaritmica()
         while (getchar() != '\n')
             ;
     }
-    if (valorX == 1)
+    if (valorK == 1)
     {
         printf("\nA função eh Constante");
     }
