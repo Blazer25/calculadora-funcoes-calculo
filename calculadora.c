@@ -498,7 +498,7 @@ int funcaoTangente()
         printf("Digite o valor de x para calcular:\n");
         while (scanf("%f", &valorX) != 1)
         {
-            printf("Entrada inválida, digite um número real e diferente de pi/2 e 3pi/2: \n");
+            printf("Entrada inválida, digite um número real: \n");
             while (getchar() != '\n')
                 ;
         }
