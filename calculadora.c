@@ -281,17 +281,11 @@ int funcaoQuadratica()
     }
 
     // Calculando o vertice da função
-    if (delta < 0)
-    {
-        strcpy(resultadoVertice, "Não possui vertice real");
-    }
-    else
-    {
-        verticeX = (-(1) * valorB) / (2 * valorA);
-        verticeY = (-(1) * delta) / (4 * valorA);
-        sprintf(resultadoVertice, "Os vertices são: (%.4f , %.4f)", verticeX, verticeY);
-    }
-
+    
+    verticeX = (-(1) * valorB) / (2 * valorA);
+    verticeY = (-(1) * delta) / (4 * valorA);
+    sprintf(resultadoVertice, "Os vertices são: (%.4f , %.4f)", verticeX, verticeY);
+    
     // Determinando o resultado da função
     resultadoFuncao = (valorA * pow(valorX, 2)) + (valorB * valorX) + valorC;
 
@@ -502,7 +496,7 @@ int funcaoTangente()
     /*Radianos*/
     case 2:
         printf("Digite o valor de x para calcular:\n");
-        while (scanf("%f", &valorX) != 1 || valorX == (M_PI / 2) || valorX == (2 * M_PI / 3) || valorX == (-1) * (M_PI / 2) || valorX == (-1) * (2 * M_PI / 3))
+        while (scanf("%f", &valorX) != 1)
         {
             printf("Entrada inválida, digite um número real e diferente de pi/2 e 3pi/2: \n");
             while (getchar() != '\n')
